@@ -8,7 +8,7 @@ def create_task():
     logger.debug(f"User typed {description} for task description")
     priority = input("Choose task priority from 1 to 3: ")
     logger.debug(f"User choice {priority} for task priority")
-    task = Task(title, description, False, priority)
+    task = Task(id, title, description, False, priority)
     logger.debug("Task was created")
     return task
 
