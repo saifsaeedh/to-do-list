@@ -13,12 +13,13 @@ def get_choice():
     return choice
 
 def initializer():
-    with open("tasks.txt", "a") as file:
+    with open("tasks.json", "a") as file:
         logger.info("Calculator initialized")
+        logger.info("JSON file is loaded/created")
         pass
 
-def id_counter():
-
+#def id_counter():
+#    with open("")
 
 while True:
     initializer()
@@ -34,7 +35,12 @@ while True:
             manager.view_tasks()
         elif choice == "4":
             manager.find_task()
+    elif choice == "0":
+        logger.info("Program has shut down")
+        break
+    
     else:
         print("Invalid choice, try again")
     
+
     break

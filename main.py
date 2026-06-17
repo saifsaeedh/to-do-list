@@ -10,9 +10,6 @@ def get_choice():
     logger.debug(f"User entered choice {choice}")
     return choice
 
-
-
-
 def initializer():
     with open("tasks.txt", "a") as file:
         logger.info("Calculator initialized")
@@ -35,5 +32,4 @@ while True:
     else:
         print("Invalid choice, try again")
     
-
     break

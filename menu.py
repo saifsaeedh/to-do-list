@@ -11,4 +11,6 @@ def show_main():
     print("3. View Tasks")
     print("4. Find tasks")
     print()
+    print("0. Quit program")
+    print()
     logger.info("Menu shown")
