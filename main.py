@@ -21,7 +21,7 @@ while True:
     choice = get_choice()
     if choice in ["1", "2", "3", "4"]:
         if choice == "1":
-            task = manager.create_task()
+            task = manager.create_task(manager.get_next_id())
             manager.add_task(task)
         elif choice == "2":
             manager.remove_task()

@@ -13,21 +13,22 @@ def get_choice():
     return choice
 
 def initializer():
-    with open("tasks.json", "a") as file:
-        logger.info("Calculator initialized")
-        logger.info("JSON file is loaded/created")
+    try:
+        with open("tasks.json", "x") as file:
+            file.write("[]")
+            logger.info("Calculator initialized")
+            logger.info("JSON file is loaded/created")
+    except FileExistsError:
         pass
-
-#def id_counter():
-#    with open("")
 
 while True:
     initializer()
     menu.show_main()
+    last_id = manager.get_next_id()
     choice = get_choice()
     if choice in ["1", "2", "3", "4"]:
         if choice == "1":
-            task = manager.create_task()
+            task = manager.create_task(last_id)
             manager.add_task(task)
         elif choice == "2":
             manager.remove_task()
