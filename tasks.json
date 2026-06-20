@@ -1,16 +1,1 @@
-[
-    {
-        "id": 1,
-        "title": "1",
-        "description": "2",
-        "complete": false,
-        "priority": "3"
-    },
-    {
-        "id": 2,
-        "title": "q",
-        "description": "w",
-        "complete": false,
-        "priority": "3"
-    }
-]
+[]

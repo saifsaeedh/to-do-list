@@ -11,9 +11,12 @@ def get_choice():
     return choice
 
 def initializer():
-    with open("tasks.txt", "a") as file:
-        logger.info("Calculator initialized")
-        pass
+    with open("tasks.json", "a+") as file:
+        file.seek(0)
+
+        if file.read() == "":
+            file.write("[]")
+        logger.info("To-do app initialized")
 
 while True:
     initializer()
@@ -21,15 +24,17 @@ while True:
     choice = get_choice()
     if choice in ["1", "2", "3", "4"]:
         if choice == "1":
+            data = []
+            data = manager.load_tasks()
+            manager.view_tasks(data)
+
+        elif choice == "2":
             task = manager.create_task(manager.get_next_id())
             manager.add_task(task)
-        elif choice == "2":
-            manager.remove_task()
         elif choice == "3":
-            manager.view_tasks()
+            manager.remove_task()
         elif choice == "4":
             manager.find_task()
     else:
-        print("Invalid choice, try again")
-    
+        print("Invalid choice, try again")    
     break

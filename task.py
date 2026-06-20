@@ -17,6 +17,14 @@ class Task:
             "priority": self.priority
         }
     
-    #def from_dict(self):
+    @classmethod
+    def from_dict(cls, task_data):
+        return cls(
+            id=task_data["id"], 
+            title=task_data["title"], 
+            description=task_data["description"], 
+            complete=task_data["complete"], 
+            priority=task_data["priority"]
+            )
 
 
